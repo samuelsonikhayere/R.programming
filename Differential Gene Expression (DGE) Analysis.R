@@ -72,3 +72,11 @@ for (mydata in my_file){
 
 
 save.image(file = "Assignment 2.RData")
+
+#Separate the results from the different files and get the summaries
+
+result_1 <- my_result[[1]]
+result_2 <- my_result[[2]]
+
+table(result_1$status)
+table (result_2$status)
