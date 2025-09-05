@@ -10,7 +10,6 @@
 
 #Create the input and output directory 
 
-
 input_directory <- "raw_data"
 output_directory <- "results"
 
@@ -24,10 +23,8 @@ classify_gene <- function(logFC, padj){
 status <- ifelse (logFC > 1 & padj < 0.05, "Upregulated",
                 ifelse (logFC < -1 & padj < 0.05, "Downregulated", 
                      "Not_Significant"))
-  
 return (status)
 }
-
 
 #Create a loop 
 for (mydata in my_file){
@@ -39,7 +36,6 @@ for (mydata in my_file){
   data_file <- read.csv(my_file_path, header = TRUE)
   cat("\n Processing", mydata, "checking for missing values")
   
-    
   if ("logFC" %in% names(data_file)){
       missing_count <- sum(is.na(data_file$logFC))
       
@@ -72,3 +68,4 @@ for (mydata in my_file){
 
 
 save.image(file = "Assignment 2.RData")
+
